@@ -3,6 +3,9 @@ from brain_games.cli import welcome_user
 
 
 def main():
+    '''
+    A function that greets the user.
+    '''
     print('Welcome to the Brain Games!')
     welcome_user()
 
