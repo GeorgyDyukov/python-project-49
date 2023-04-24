@@ -5,11 +5,14 @@ game_description = 'What number is missing in the progression?'
 def task():
     ''''
     The function generates an arithmetic progression.
-    Then it selects one member of the progression at random and replaces its value with a placeholder.
+    Then it selects one member of the progression at random
+    and replaces its value with a placeholder.
 
     Returns:
-    question (str): a string representing the progression with one member missing.
-    correct_answer (str): a string representing the value of the missing progression member.
+    question (str): a string representing the progression
+        with one member missing.
+    correct_answer (str): a string representing the value
+        of the missing progression member.
     '''
     progression_start = random.randint(-10, 10)
     progression_members_amount = random.randint(5, 10)
