@@ -16,11 +16,13 @@ def welcome_user():
 
 def complete_game_lap(question, correct_answer):
     '''
-    The function presents a math expression (question) to the user, prompts for an answer, and checks whether the provided answer is correct.
+    The function presents a math expression (question) to the user,
+    prompts for an answer, and checks whether the provided answer is correct.
 
     Parameters:
         question (str): a string containing the math expression (question).
-        correct_answer (str): a string representing the correct answer to the given math expression(question).
+        correct_answer (str): a string representing the correct answer
+            to the given math expression(question).
 
     Returns:
         True if the user's answer matches the correct answer.
@@ -38,11 +40,16 @@ def complete_game_lap(question, correct_answer):
 
 def play_game(game):
     '''
-    The function is a game engine that runs a specified game and prompts the user to answer math questions until they have correctly answered three questions or have given an incorrect answer.
+    The function is a game engine that runs a specified game and prompts
+    the user to answer math questions until they have correctly answered
+    three questions or have given an incorrect answer.
 
     Parameters:
-        game: an object representing the game to be played. The object must have two methods: task() and game_description.
-            The task() method generates a random math expression and its correct answer. The game_description method returns a string describing the game.
+        game: an object representing the game to be played. The object
+            must have two methods: task() and game_description.
+            The task() method generates a random math expression and its
+            correct answer. The game_description method returns a string
+            describing the game.
     '''
     name = welcome_user()
     print(game.game_description)
