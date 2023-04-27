@@ -34,7 +34,8 @@ def complete_game_lap(question, correct_answer):
         print('Correct!')
         return True
     else:
-        print(f"'{answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")
+        print(f"'{answer}' is wrong answer ;(. \
+        Correct answer was '{correct_answer}'.")
         return False
 
 
