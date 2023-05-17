@@ -1,6 +1,8 @@
 import random
 from math import gcd
-game_description = 'Find the greatest common divisor of given numbers.'
+GAME_DESCRIPTION = 'Find the greatest common divisor of given numbers.'
+MIN_NUMBER = -10
+MAX_NUMBER = 10
 
 
 def task():
@@ -10,12 +12,12 @@ def task():
 
     Returns:
         question (str): a string representing the randomly generated
-            math expression in the form of 'a b'.
+            math expression in the format 'a b'.
         correct_answer (str): a string representing the greatest common divisor
             of the two randomly generated integers.
     '''
-    a = random.randint(-10, 10)
-    b = random.randint(-10, 10)
+    a = random.randint(MIN_NUMBER, MAX_NUMBER)
+    b = random.randint(MIN_NUMBER, MAX_NUMBER)
     question = f'{a} {b}'
     correct_answer = find_gcd(a, b)
     return question, correct_answer
@@ -26,8 +28,8 @@ def find_gcd(a, b):
     The function takes two integers and finds their greatest common divisor.
 
     Parameters:
-        a (int): A random number between -10 and 10.
-        b (int): A random number between -10 and 10.
+        a (int): A random number within a specific numerical range.
+        b (int): A random number within a specific numerical range.
 
     Returns:
         str: a string representing the greatest common divisor
