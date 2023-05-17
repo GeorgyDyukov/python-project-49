@@ -1,5 +1,7 @@
 import random
-game_description = 'What is the result of the expression?'
+GAME_DESCRIPTION = 'What is the result of the expression?'
+MIN_NUMBER = -10
+MAX_NUMBER = 10
 
 
 def task():
@@ -7,13 +9,13 @@ def task():
     The function generates a random math expression and its correct answer.
 
     Returns:
-        question (str): a string with the generated math expression
-            in the format "a operator b".
+        question (str): a string representing the randomly generated
+            math expression in the format "a operator b".
         correct_answer (str): a string with the correct answer
             to the generated math expression.
     '''
-    a = random.randint(-10, 10)
-    b = random.randint(-10, 10)
+    a = random.randint(MIN_NUMBER, MAX_NUMBER)
+    b = random.randint(MIN_NUMBER, MAX_NUMBER)
     operator = random.choice(['+', '-', '*'])
     question = f'{a} {operator} {b}'
     correct_answer = calculate_answer(question)
@@ -26,11 +28,10 @@ def calculate_answer(question):
 
     Parameters:
         question (str): a string containing a math expression
-            in the form "a operator b".
+            in the format "a operator b".
 
     Returns:
-        answer (str): a string representing the evaluated answer
+        str: a string representing the evaluated answer
             of the given math expression.
     '''
-    answer = str(eval(question))
-    return answer
+    return str(eval(question))
