@@ -1,42 +1,5 @@
 import prompt
-
-
-def welcome_user():
-    '''
-    The function greets the user and prompts for their name.
-
-    Returns:
-        name (str): The name of the user entered via the prompt.
-    '''
-    print('Welcome to the Brain Games!')
-    name = prompt.string('May I have your name? ')
-    print(f'Hello, {name}!')
-    return name
-
-
-def complete_game_lap(question, correct_answer):
-    '''
-    The function presents a math expression (question) to the user,
-    prompts for an answer, and checks whether the provided answer is correct.
-
-    Parameters:
-        question (str): a string containing the math expression (question).
-        correct_answer (str): a string representing the correct answer
-            to the given math expression(question).
-
-    Returns:
-        True if the user's answer matches the correct answer.
-        False if the user's answer does not match the correct answer.
-    '''
-    print(f'Question: {question}')
-    answer = prompt.string('Your answer: ')
-    if answer == correct_answer:
-        print('Correct!')
-        return True
-    else:
-        print(f"'{answer}' is wrong answer ;(. \
-        Correct answer was '{correct_answer}'.")
-        return False
+MAX_QUESTIONS = 3
 
 
 def play_game(game):
@@ -47,20 +10,27 @@ def play_game(game):
 
     Parameters:
         game: an object representing the game to be played. The object
-            must have two methods: task() and game_description.
+            must have two methods: task() and GAME_DESCRIPTION.
             The task() method generates a random math expression and its
-            correct answer. The game_description method returns a string
+            correct answer. The GAME_DESCRIPTION method returns a string
             describing the game.
     '''
-    name = welcome_user()
-    print(game.game_description)
+    print('Welcome to the Brain Games!')
+    name = prompt.string('May I have your name? ')
+    print(f'Hello, {name}!')
+    print(game.GAME_DESCRIPTION)
     counter = 0
-    while counter < 3:
+    while counter < MAX_QUESTIONS:
         question, correct_answer = game.task()
-        if complete_game_lap(question, correct_answer):
+        print(f'Question: {question}')
+        answer = prompt.string('Your answer: ')
+        if answer == correct_answer:
+            print('Correct!')
             counter += 1
         else:
+            print(f"'{answer}' is wrong answer ;(. \
+            Correct answer was '{correct_answer}'.")
             print(f"Let's try again, {name}!")
             break
-    if counter == 3:
+    if counter == MAX_QUESTIONS:
         print(f'Congratulations, {name}!')
