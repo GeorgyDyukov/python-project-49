@@ -25,9 +25,9 @@ def task():
     members_num = random.randint(MIN_MEMBERS_AMOUNT, MAX_MEMBERS_AMOUNT)
     progression = generate_progression(initial_term, common_diff, members_num)
     question_index = random.randint(members_num - members_num, members_num - 1)
-    correct_answer = progression[question_index]
+    correct_answer = str(progression[question_index])
     progression[question_index] = '..'
-    question = ' '.join(progression)
+    question = ' '.join(str(i) for i in progression)
     return question, correct_answer
 
 
@@ -46,5 +46,5 @@ def generate_progression(initial_term, common_diff, members_num):
     '''
     progression = []
     for i in range(members_num):
-        progression.append(str(initial_term + common_diff * i))
+        progression.append(initial_term + common_diff * i)
     return progression
