@@ -31,4 +31,4 @@ def is_even(question):
     Returns:
         bool: True if the number is even, False if the number is odd.
     '''
-    return True if question % 2 == 0 else False
+    return question % 2 == 0
